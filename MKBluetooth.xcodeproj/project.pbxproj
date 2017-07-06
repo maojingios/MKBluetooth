@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C453CE7F1F08CD6100D87FBF /* MKMultiPeersConnectivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C453CE7E1F08CD6100D87FBF /* MKMultiPeersConnectivity.m */; };
 		C470BCB31EEC0DA1003B5F65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C470BCB21EEC0DA1003B5F65 /* main.m */; };
 		C470BCB61EEC0DA1003B5F65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C470BCB51EEC0DA1003B5F65 /* AppDelegate.m */; };
 		C470BCB91EEC0DA1003B5F65 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C470BCB81EEC0DA1003B5F65 /* ViewController.m */; };
@@ -15,11 +14,11 @@
 		C470BCBE1EEC0DA1003B5F65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C470BCBD1EEC0DA1003B5F65 /* Assets.xcassets */; };
 		C470BCC11EEC0DA1003B5F65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C470BCBF1EEC0DA1003B5F65 /* LaunchScreen.storyboard */; };
 		C47238481EEE2A4900470FFD /* CGPeerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47238471EEE2A4900470FFD /* CGPeerViewController.m */; };
+		C4CC789B1F0E2DE3004A996E /* MKMultiPeersBoardcarst.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC789A1F0E2DE3004A996E /* MKMultiPeersBoardcarst.m */; };
+		C4CC789E1F0E4200004A996E /* MKSessionFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC789D1F0E4200004A996E /* MKSessionFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C453CE7D1F08CD6100D87FBF /* MKMultiPeersConnectivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMultiPeersConnectivity.h; sourceTree = "<group>"; };
-		C453CE7E1F08CD6100D87FBF /* MKMultiPeersConnectivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMultiPeersConnectivity.m; sourceTree = "<group>"; };
 		C470BCAE1EEC0DA1003B5F65 /* MKBluetooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKBluetooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C470BCB21EEC0DA1003B5F65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C470BCB41EEC0DA1003B5F65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +31,10 @@
 		C470BCC21EEC0DA1003B5F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47238461EEE2A4900470FFD /* CGPeerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPeerViewController.h; sourceTree = "<group>"; };
 		C47238471EEE2A4900470FFD /* CGPeerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPeerViewController.m; sourceTree = "<group>"; };
+		C4CC78991F0E2DE3004A996E /* MKMultiPeersBoardcarst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKMultiPeersBoardcarst.h; sourceTree = "<group>"; };
+		C4CC789A1F0E2DE3004A996E /* MKMultiPeersBoardcarst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKMultiPeersBoardcarst.m; sourceTree = "<group>"; };
+		C4CC789C1F0E4200004A996E /* MKSessionFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSessionFinder.h; sourceTree = "<group>"; };
+		C4CC789D1F0E4200004A996E /* MKSessionFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSessionFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +73,10 @@
 				C470BCB81EEC0DA1003B5F65 /* ViewController.m */,
 				C47238461EEE2A4900470FFD /* CGPeerViewController.h */,
 				C47238471EEE2A4900470FFD /* CGPeerViewController.m */,
-				C453CE7D1F08CD6100D87FBF /* MKMultiPeersConnectivity.h */,
-				C453CE7E1F08CD6100D87FBF /* MKMultiPeersConnectivity.m */,
+				C4CC78991F0E2DE3004A996E /* MKMultiPeersBoardcarst.h */,
+				C4CC789A1F0E2DE3004A996E /* MKMultiPeersBoardcarst.m */,
+				C4CC789C1F0E4200004A996E /* MKSessionFinder.h */,
+				C4CC789D1F0E4200004A996E /* MKSessionFinder.m */,
 				C470BCBA1EEC0DA1003B5F65 /* Main.storyboard */,
 				C470BCBD1EEC0DA1003B5F65 /* Assets.xcassets */,
 				C470BCBF1EEC0DA1003B5F65 /* LaunchScreen.storyboard */,
@@ -161,11 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CC789B1F0E2DE3004A996E /* MKMultiPeersBoardcarst.m in Sources */,
 				C470BCB91EEC0DA1003B5F65 /* ViewController.m in Sources */,
 				C470BCB61EEC0DA1003B5F65 /* AppDelegate.m in Sources */,
 				C47238481EEE2A4900470FFD /* CGPeerViewController.m in Sources */,
+				C4CC789E1F0E4200004A996E /* MKSessionFinder.m in Sources */,
 				C470BCB31EEC0DA1003B5F65 /* main.m in Sources */,
-				C453CE7F1F08CD6100D87FBF /* MKMultiPeersConnectivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
