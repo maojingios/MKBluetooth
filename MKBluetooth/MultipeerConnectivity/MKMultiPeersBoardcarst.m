@@ -77,7 +77,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - <MCSessionDelegate>
+#pragma mark - <MCSessionDelegate> 注意session 方法是在子线程，刷新UI需要返回主线程。
 
 -(void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state{
     
@@ -179,7 +179,7 @@
     return _mcsession;
 }
 
--(MCAdvertiserAssistant *)adAssistant{
+-(MCAdvertiserAssistant *)adAssistant{//如果广播命名为“cmj-photo”那么发现节点只有在MCBrowserViewController中指定为“cmj-photo”才能发现此服务。
     if (!_adAssistant) {
         _adAssistant = [[MCAdvertiserAssistant alloc]initWithServiceType:@"cmj-photo" discoveryInfo:nil session:self.mcsession];
         _adAssistant.delegate = self;

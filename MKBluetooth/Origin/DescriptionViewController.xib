@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-We-8FM">
+                    <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                    <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <state key="normal" title="返回"/>
+                    <connections>
+                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="QTK-tJ-IgQ"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZTH-KJ-QvR">
+                    <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <mutableString key="text">1、什么是蓝牙?
+蓝牙全称Bluetooth Low Energy(简称BLE)，意思是蓝牙低功耗技术，如今的大部分移动设备都配备有蓝牙4.0，相比之前的蓝牙技术耗电量大大降低。从iOS的发展史也不难看出苹果目前对蓝牙技术也是越来越关注，例如苹果于2013年9月发布的iOS7就配备了iBeacon技术，这项技术完全基于蓝牙传输。但是众所周知苹果的设备对于权限要求也是比较高的，因此在iOS中并不能像Android一样随意使用蓝牙进行文件传输（除非你已经越狱）。知道什么是蓝牙之后,那么在iOS中进行蓝牙传输应用开发常用的框架有哪几种呢?
+
+2、蓝牙在开发中的框架有哪些?
+
+GameKit.framework：iOS7之前的蓝牙通讯框架，从iOS7开始过期，但是目前多数应用还是基于此框架。
+
+MultipeerConnectivity.framework：iOS7开始引入的新的蓝牙通讯开发框架，用于取代GameKit。
+
+CoreBluetooth.framework：功能强大的蓝牙开发框架，要求设备必须支持蓝牙4.0。
+
+3、蓝牙在开发中的框架优缺点?
+GameKit.framework和MultipeerConnectivity.framework使用起来比较简单，但只支持iOS设备，传输内容仅限于沙盒或者照片库中用户选择的文件，并且GameKit.framework框架只能在同一个应用之间进行传输（如一个iOS设备安装应用A，另一个iOS设备上安装应用B是无法传输的）。
+CoreBluetooth就摆脱了这些束缚，它不再局限于iOS设备之间进行传输，你可以通过iOS设备向Android、Windows Phone以及其他安装有蓝牙4.0芯片的智能设备传输，因此也是目前智能家居、无线支付等热门智能设备所推崇的技术。
+
+4、蓝牙框架之GameKit框架
+
+其实从名称来看这个框架并不是专门为了支持蓝牙传输而设计的，它是为游戏设计的。而很多游戏中会用到基于蓝牙的点对点信息传输，因此这个框架中集成了蓝牙传输模块。前面也说了这个框架本身有很多限制，但是在iOS7之前的很多蓝牙传输都是基于此框架的，所以有必要对它进行了解。GameKit中的蓝牙使用设计很简单，并没有给开发者留有太多的复杂接口，而多数连接细节开发者是不需要关注的。GameKit中提供了两个关键类来操作蓝牙连接：
+
+GKPeerPickerController：蓝牙查找、连接用的视图控制器，通常情况下应用程序A打开后会调用此控制器的show方法来展示一个蓝牙查找的视图，一旦发现了另一个同样在查找蓝牙连接的客户客户端B就会出现在视图列表中，此时如果用户点击连接B，B客户端就会询问用户是否允许A连接B，如果允许后A和B之间建立一个蓝牙连接。
+
+GKSession：连接会话，主要用于发送和接受传输数据。一旦A和B建立连接GKPeerPickerController的代理方法会将A、B两者建立的会话（GKSession）对象传递给开发人员，开发人员拿到此对象可以发送和接收数据。
+
+其实理解了上面两个类之后，使用起来就比较简单了，下面就以一个图片发送程序来演示GameKit中蓝牙的使用。此程序一个客户端运行在模拟器上作为客户端A，另一个运行在iPhone真机上作为客户端B（注意A、B必须运行同一个程序，GameKit蓝牙开发是不支持两个不同的应用传输数据的）。两个程序运行之后均调用GKPeerPickerController来发现周围蓝牙设备，一旦A发现了B之后就开始连接B，然后iOS会询问用户是否接受连接，一旦接受之后就会调用GKPeerPickerController的-(void)peerPickerController:(GKPeerPickerController )picker didConnectPeer:(NSString )peerID toSession:(GKSession *)session代理方法，在此方法中可以获得连接的设备id（peerID）和连接会话（session）；此时可以设置会话的数据接收句柄（相当于一个代理）并保存会话以便发送数据时使用；一旦一端（假设是A）调用会话的sendDataToAllPeers: withDataMode: error:方法发送数据，此时另一端（假设是B）就会调用句柄的
+- (void) receiveData:(NSData )data fromPeer:(NSString )peer inSession: (GKSession )session context:(void )context方法，在此方法可以获得发送数据并处理。
+
+
+5、蓝牙框架之MultipeerConnectivity框架
+
+前面已经说了GameKit相关的蓝牙操作类从iOS7已经全部过期，苹果官方推荐使用MultipeerConnectivity代替。但是应该了解，MultipeerConnectivity.framework并不仅仅支持蓝牙连接，准确的说它是一种支持Wi-Fi网络、P2P Wi-Fi已经蓝牙个人局域网的通信框架，它屏蔽了具体的连接技术，让开发人员有统一的接口编程方法。通过MultipeerConnectivity连接的节点之间可以安全的传递信息、流或者其他文件资源而不必通过网络服务。此外使用MultipeerConnectivity进行近场通信也不再局限于同一个应用之间传输，而是可以在不同的应用之间进行数据传输（当然如果有必要的话你仍然可以选择在一个应用程序之间传输）。
+
+要了解MultipeerConnectivity的使用必须要清楚一个概念：广播（Advertisting）和发现（Disconvering），这很类似于一种Client-Server模式。假设有两台设备A、B，B作为广播去发送自身服务，A作为发现的客户端。一旦A发现了B就试图建立连接，经过B同意二者建立连接就可以相互发送数据。在使用GameKit框架时，A和B既作为广播又作为发现，当然这种情况在MultipeerConnectivity中也很常见。
+
+A.广播
+
+无论是作为服务器端去广播还是作为客户端去发现广播服务，那么两个（或更多）不同的设备之间必须要有区分，通常情况下使用MCPeerID对象来区分一台设备，在这个设备中可以指定显示给对方查看的名称（display name）。另外不管是哪一方，还必须建立一个会话MCSession用于发送和接受数据。通常情况下会在会话的-(void)session:(MCSession )session peer:(MCPeerID )peerID didChangeState:(MCSessionState)state代理方法中跟踪会话状态（已连接、正在连接、未连接）;在会话的-(void)session:(MCSession )session didReceiveData:(NSData )data fromPeer:(MCPeerID *)peerID代理方法中接收数据;同时还会调用会话的-(void)sendData: toPeers:withMode: error:方法去发送数据。
+
+广播作为一个服务器去发布自身服务，供周边设备发现连接。在MultipeerConnectivity中使用MCAdvertiserAssistant来表示一个广播，通常创建广播时指定一个会话MCSession对象将广播服务和会话关联起来。一旦调用广播的start方法周边的设备就可以发现该广播并可以连接到此服务。在MCSession的代理方法中可以随时更新连接状态，一旦建立了连接之后就可以通过MCSession的connectedPeers获得已经连接的设备。
+
+B.发现
+
+前面已经说过作为发现的客户端同样需要一个MCPeerID来标志一个客户端，同时会拥有一个MCSession来监听连接状态并发送、接受数据。除此之外，要发现广播服务，客户端就必须要随时查找服务来连接，在MultipeerConnectivity中提供了一个控制器MCBrowserViewController来展示可连接和已连接的设备（这类似于GameKit中的GKPeerPickerController），当然如果想要自己定制一个界面来展示设备连接的情况你可以选择自己开发一套UI界面。一旦通过MCBroserViewController选择一个节点去连接，那么作为广播的节点就会收到通知，询问用户是否允许连接。由于初始化MCBrowserViewController的过程已经指定了会话MCSession，所以连接过程中会随时更新会话状态，一旦建立了连接，就可以通过会话的connected属性获得已连接设备并且可以使用会话发送、接受数据。
+
+在两个程序中无论是MCBrowserViewController还是MCAdvertiserAssistant在初始化的时候都指定了一个服务类型“cmj-photo”，这是唯一标识一个服务类型的标记，可以按照官方的要求命名，应该尽可能表达服务的作用。需要特别指出的是，如果广播命名为“cmj-photo”那么发现节点只有在MCBrowserViewController中指定为“cmj-photo”才能发现此服务。
+
+
+6、蓝牙框架之CoreBluetooth框架
+
+无论是GameKit还是MultipeerConnectivity，都只能在iOS设备之间进行数据传输，这就大大降低了蓝牙的使用范围，于是从iOS6开始苹果推出了CoreBluetooth.framework,这个框架最大的特点就是完全基于BLE4.0标准并且支持非iOS设备。当前BLE应用相当广泛，不再仅仅是两个设备之间的数据传输，它还有很多其他应用市场，例如室内定位、无线支付、智能家居等等，这也使得CoreBluetooth成为当前最热门的蓝牙技术。
+
+CoreBluetooth设计同样也是类似于客户端-服务器端的设计，作为服务器端的设备称为外围设备（Peripheral），作为客户端的设备叫做中央设备（Central），CoreBlueTooth整个框架就是基于这两个概念来设计的。
+
+外围设备和中央设备在CoreBluetooth中使用CBPeripheralManager和CBCentralManager表示。
+
+CBPeripheralManager：外围设备通常用于发布服务、生成数据、保存数据。外围设备发布并广播服务，告诉周围的中央设备它的可用服务和特征。
+
+CBCentralManager：中央设备使用外围设备的数据。中央设备扫描到外围设备后会就会试图建立连接，一旦连接成功就可以使用这些服务和特征。
+一台iOS设备（注意iPhone4以下设备不支持BLE，另外iOS7.0、8.0模拟器也无法模拟BLE）既可以作为外围设备又可以作为中央设备，但是不能同时即是外围设备又是中央设备，同时注意建立连接的过程不需要用户手动选择允许，这一点和前面两个框架是不同的，这主要是因为BLE应用场景不再局限于两台设备之间资源共享了。
+A.外围设备
+
+创建一个外围设备通常分为以下几个步骤：
+1. 创建外围设备CBPeripheralManager对象并指定代理。
+2. 创建特征CBCharacteristic、服务CBSerivce并添加到外围设备
+3. 外围设备开始广播服务（startAdvertisting:）。
+4. 和中央设备CBCentral进行交互。
+下面是简单的程序示例，程序有两个按钮“启动”和“更新”，点击启动按钮则创建外围设备、添加服务和特征并开始广播，一旦发现有中央设备连接并订阅了此服务的特征则通过更新按钮更新特征数据，此时已订阅的中央设备就会收到更新数据。
+
+B.中央设备
+
+中央设备的创建一般可以分为如下几个步骤：
+
+创建中央设备管理对象CBCentralManager并指定代理。 扫描外围设备，一般发现可用外围设备则连接并保存外围设备。 查找外围设备服务和特征，查找到可用特征则读取特征数据。
+下面是一个简单的中央服务器端实现，点击“启动”按钮则开始扫描周围的外围设备，一旦发现了可用的外围设备则建立连接并设置外围设备的代理，之后开始查找其服务和特征。一旦外围设备的特征值做了更新，则可以在代理方法中读取更新后的特征值。
+</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+    </objects>
+</document>
