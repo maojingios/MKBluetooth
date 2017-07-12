@@ -200,7 +200,7 @@
     
     NSData * value = [valueString dataUsingEncoding:NSUTF8StringEncoding];
     
-    /*更新特征值*/
+    /*更新特征值,中心设备订阅成功后外围设备可以更新特征值发送到中心设备,一旦更新特征值将会触发中心设备的代理方法：didUpdateValueForCharacteristic*/
     [self.peripheralManager updateValue:dicData forCharacteristic:self.characteristic onSubscribedCentrals:nil];
     
     /*输出打印*/
